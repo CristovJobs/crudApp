@@ -25,4 +25,9 @@ Route::post('/posts/add', [PostController::class, "store"]);
 Route::get('/posts/edit/{id}', [PostController::class, "edit"]);
 Route::put('/posts/edit/{id}', [PostController::class, "update"]);
 Route::post('/posts/info/{id}', [PostController::class, "store"]);
-Route::post('/posts/delete/{id}', [PostController::class, "store"]);
+
+
+Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
+Route::delete('/posts/{id}', [PostController::class, 'deleted'])->name('posts.deleted');
+
+//Route::post('/posts/delete/{id}', [PostController::class, "store"]);

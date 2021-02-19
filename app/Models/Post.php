@@ -13,8 +13,4 @@ class Post extends Model
         "titulo", "conteudo", "tags"
     ];
 
-
-
-
-
 }

@@ -1,0 +1,22 @@
+.footer {
+    position: fixed !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    background-color: white !important;
+    color: black !important;
+    text-align: center !important;
+ }
+
+.fx-ui-1{
+    display: flex;
+    justify-content: space-between;
+}
+
+.custom-txt{
+    margin-top: 8px !important;
+    padding: 1px 25px !important;
+    position: relative !important;
+    top: 9px !important;
+    text-align: right !important;
+}

@@ -49,8 +49,16 @@ class PostController extends Controller
      * @param \App\Models\Post $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($id)
+    
     {
+
+        if (!$post = Post::find($id)) { 
+
+            return redirect()-back();
+        }
+
+        return view('dashboard.post.show', compact('post'));
 
     }
 
@@ -89,8 +97,15 @@ class PostController extends Controller
      * @param \App\Models\Post $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function deleted($id)
     {
-        //
+
+        // dd("deleted o post --- {$id}");
+
+        if (!$post = Post::find($id))
+
+        return redirect()->back();
+        $post->delete();
+        return redirect()->back();
     }
 }

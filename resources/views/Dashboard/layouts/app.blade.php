@@ -52,7 +52,7 @@
                         <li class="dropdown">
                             <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                                 <div class="avatar mr-1">
-                                    <img src="assets/images/avatar/avatar-s-1.png" alt="" srcset="">
+                                    <img src="{{ asset("dashboard/images/avatar/avatar-s-24.png") }}" alt="" srcset="">
                                 </div>
                                 <div class="d-none d-md-block d-lg-inline-block">Hi, Saugi</div>
                             </a>
@@ -70,13 +70,12 @@
 
             @yield("section")
 
-            <footer>
+            <footer class="footer">
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-left">
-                        <p>2020 &copy; Voler</p>
                     </div>
-                    <div class="float-right">
-                        <p>Crafted with <span class='text-danger'><i data-feather="heart"></i></span> by <a href="http://ahmadsaugi.com">Ahmad Saugi</a></p>
+                    <div>
+                        <p class="custom-txt">2020 &copy; Voler Crafted with <span class='text-danger'><i data-feather="heart"></i></span> by <a href="http://ahmadsaugi.com">Ahmad Saugi</a></p>
                     </div>
                 </div>
             </footer>

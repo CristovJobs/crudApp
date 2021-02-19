@@ -40,10 +40,14 @@
                                 <td>{{ $post->titulo }}</td>
                                 <td>{{ $post->conteudo }}</td>
                                 <td>{{ $post->tags }}</td>
-                                <td>
-                                    <a href="/posts/edit/{{ $post->id }}">Editar</a>
-                                    <a href="/posts/info/{{ $post->id }}">Visualizar</a>
-                                    <a href="/posts/delete/{{ $post->id }}">Deletar</a>
+                                <td class="fx-ui-1">
+                                    <a  class="btn btn-sm btn-success" href="/posts/edit/{{ $post->id }}">Editar</a>
+                                    <a  class="btn btn-sm btn-warning" href="{{ route('posts.show', $post->id) }}">Visualizar</a>
+                                    <form action="{{ route('posts.deleted', $post->id) }}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-sm btn-danger"> Deletar</button>
+                                    </form>
                                 </td>
                             </tr>
                         @empty

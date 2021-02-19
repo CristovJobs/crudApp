@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset("dashboard/vendors/chartjs/Chart.min.css") }}">
     <link rel="stylesheet" href="{{ asset("dashboard/vendors/perfect-scrollbar/perfect-scrollbar.css") }}">
     <link rel="stylesheet" href="{{ asset("dashboard/css/app.css") }}">
+    <link rel="stylesheet" href="{{ asset("dashboard/css/sample.css") }}">
     <link rel="shortcut icon" href="{{ asset("dashboard/images/favicon.svg") }}" type="image/x-icon">
 </head>
 <body>
