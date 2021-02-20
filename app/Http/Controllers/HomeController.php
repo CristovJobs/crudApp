@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //dashboard.home.index'
+        //annotations
         return view('dashboard.home.index');
     }
 }
