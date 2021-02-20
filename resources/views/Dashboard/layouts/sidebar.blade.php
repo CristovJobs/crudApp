@@ -24,7 +24,7 @@
                             <a href="/posts">List</a>
                         </li>
                         <li>
-                            <a href="/posts/add">Add</a>
+                            <a href="{{route('posts.create')}}">Add</a>
                         </li>
                     </ul>
                 </li>

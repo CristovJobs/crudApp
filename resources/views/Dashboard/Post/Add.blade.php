@@ -23,9 +23,8 @@
             <div class="card">
                 <div class="card-content">
                     <div class="card-body">
-                        <form method="post" action="" class="form form-horizontal">
+                        <form action="{{ route('posts.store') }}" method="post" class="form form-horizontal" enctype="multipart/form-data">
                             @csrf
-                            @method("post")
                             @include("dashboard.Post.form")
                         </form>
                     </div>
