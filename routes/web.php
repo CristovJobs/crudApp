@@ -16,14 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-//agrupando routa no midllewere alfa
+//agrupando routa no midllewere 
 
 Route::middleware(['auth'])->group(function () {
 
     Route::get('posts/account', [PostController::class, 'account'])->name('posts.account');
-    Route::get('/', function () {return view("dashboard.home.index");});
+    Route::get('/', function () {return redirect('home');});
     Route::get('/posts', [PostController::class, "index"]);
-
 
     Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
     Route::get('/posts/add', [PostController::class, 'create'])->name('posts.create');
@@ -33,11 +32,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
     Route::delete('/posts/{id}', [PostController::class, 'deleted'])->name('posts.deleted');
-
-    //profile
-
-
-
 
 });
 
