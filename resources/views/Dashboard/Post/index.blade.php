@@ -18,7 +18,7 @@
                     @endif
                     @if (session('messageDelete'))
                         <div class="alert alert-danger alert-dismissible show fade">
-                            {{ session('messageDelete')}}
+                            {{ session('messageDelete') }}
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
@@ -59,8 +59,9 @@
                             @forelse($posts as $post)
                                 <tr>
                                     <td>
-                                        <div class="avatar mr-1"><img src="{{ url("storage/{$post->image}") }}" alt=""
-                                                width="90"></div>
+                                        <div class="avatar mr-1"><img
+                                                src="{{ url("storage/{$post->image}")}}" alt="" width="90">
+                                        </div>
                                     </td>
                                     <td>{{ $post->titulo }}</td>
                                     <td>{{ $post->conteudo }}</td>

@@ -21,20 +21,15 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth'])->group(function () {
 
     Route::get('posts/account', [PostController::class, 'account'])->name('posts.account');
-
     Route::get('/', function () {return view("dashboard.home.index");});
-
     Route::get('/posts', [PostController::class, "index"]);
-    //Route::get('/posts/add', [PostController::class, "create"]);
-   // Route::post('/posts/add', [PostController::class, "store"]);
 
 
     Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
-
-    Route::get('/posts/edit/{id}', [PostController::class, "edit"]);
     Route::get('/posts/add', [PostController::class, 'create'])->name('posts.create');
-    Route::put('/posts/edit/{id}', [PostController::class, "update"]);
-    Route::post('/posts/info/{id}', [PostController::class, "store"]);
+
+    Route::get('/posts/edit/{id}', [PostController::class, 'edit'])->name('posts.edit');
+    Route::put('/posts/{id}', [PostController::class, 'update'])->name('posts.update');
 
     Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
     Route::delete('/posts/{id}', [PostController::class, 'deleted'])->name('posts.deleted');

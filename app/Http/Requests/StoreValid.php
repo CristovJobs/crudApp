@@ -23,11 +23,21 @@ class StoreValid extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
+
+        $rules = [
+            //my rules
+
             'titulo' => 'required',
             'conteudo' => ['nullable'],
+            'tags' => ['required'],
             'image' => ['required', 'image']
-        ];
+         ];
+
+         if($this->method() == 'PUT'){
+
+            $rules['image'] =  ['required', 'image'];
+
+         }
+         return $rules;
     }
 }

@@ -13,7 +13,7 @@
             </span>
         @endif
     </div>
-</div <div class="form-body">
+<div class="form-body">
 <div class="row">
     <div class="col-md-4">
     </div>

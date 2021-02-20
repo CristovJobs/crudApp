@@ -53,7 +53,7 @@
                             <li class="nav-item dropdown">
                                <a href="{{ route('logout') }}" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                                 <div class="avatar mr-1">
-                                    <img src="{{ asset("dashboard/images/avatar/avatar-s-24.png") }}" alt="" srcset="">
+                                    <img src="{{ asset("dashboard/images/avatar/avatar-s-24.png") ?? 'nenhuma img' }}" alt="" srcset="">
                                 </div>
                                 <div class="d-none d-md-block d-lg-inline-block">Hi, {{ Auth::user()->name }}</div>
                                 </a>

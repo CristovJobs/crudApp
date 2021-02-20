@@ -24,9 +24,9 @@
             <div class="card">
                 <div class="card-content">
                     <div class="card-body">
-                        <form method="post" action="" class="form form-horizontal">
+                        <form action="{{ route('posts.update', $post->id) }}" method="post" class="form form-horizontal" enctype="multipart/form-data">
+                            @method('put')
                             @csrf
-                            @method("put")
                             @include("dashboard.Post.form")
                         </form>
                     </div>
