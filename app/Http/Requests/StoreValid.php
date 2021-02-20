@@ -29,13 +29,13 @@ class StoreValid extends FormRequest
 
             'titulo' => 'required',
             'conteudo' => ['nullable'],
-            'tags' => ['required'],
+            'tags' => ['nullable'],
             'image' => ['required', 'image']
          ];
 
          if($this->method() == 'PUT'){
 
-            $rules['image'] =  ['required', 'image'];
+            $rules['image'] =  ['nullable', 'image'];
 
          }
          return $rules;
