@@ -44,40 +44,46 @@
                 <div class="card-header">
                     Post's
                 </div>
-
-
+                <div class="card-body">
+                    <table class='table table-striped' id="table1">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Content</th>
+                                <th>Tags</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             @forelse($posts as $post)
-                            <div class="card">
-                                <div class="card-content">
-                                    <img class="card-img-top img-fluid" src="{{ url("storage/{$post->image}") }}" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h4 class="card-title">{{ $post->titulo }}</h4>
-                                        <p class="card-text">
-                                            {{ $post->conteudo }}
-                                        </p>
-                                        <p class="card-text">
-                                            {{ $post->tags }}
-                                        </p>
-                                        <div class="fx-ui-1">
-                                            <a class="btn btn-sm btn-success" href="/posts/edit/{{ $post->id }}">Editar</a>
-                                            <a class="btn btn-sm btn-warning"
-                                                href="{{ route('posts.show', $post->id) }}">Visualizar</a>
-
-                                                <form action="{{ route('posts.deleted', $post->id) }}" method="post">
-                                                @csrf
-                                                <input type="hidden" name="_method" value="DELETE">
-                                                <button type="submit" class="btn btn-sm btn-danger"> Deletar</button>
-                                            </form>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
+                                <tr>
+                                    <td>
+                                        <div class="avatar mr-1"><img src="{{ url("storage/{$post->image}") }}" alt=""
+                                                width="90"></div>
+                                    </td>
+                                    <td>{{ $post->titulo }}</td>
+                                    <td>{{ $post->conteudo }}</td>
+                                    <td>{{ $post->tags }}</td>
+                                    <td class="fx-ui-1">
+                                        <a class="btn btn-sm btn-success" href="/posts/edit/{{ $post->id }}">Editar</a>
+                                        <a class="btn btn-sm btn-warning"
+                                            href="{{ route('posts.show', $post->id) }}">Visualizar</a>
+                                        <form action="{{ route('posts.deleted', $post->id) }}" method="post">
+                                            @csrf
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button type="submit" class="btn btn-sm btn-danger"> Deletar</button>
+                                        </form>
+                                    </td>
+                                </tr>
                             @empty
-                            empty entry
+                                <tr>
+                                    <td class="text-center" colspan="4">empty entry</td>
+                                </tr>
                             @endforelse
-
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
         </section>
